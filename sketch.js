@@ -1,23 +1,67 @@
+var serial; // variable to hold an instance of the serialport library
+var portName = '/dev/cu.usbmodem1411'; // fill in your serial port name here
+var dataa;
+
 function setup() {
-  createCanvas(500, 500);
+  
+  serial = new p5.SerialPort(); // make a new instance of the serialport library
+  serial.on('list', printList); // set a callback function for the serialport list event
+  serial.on('connected', serverConnected); // callback for connecting to the server
+  serial.on('open', portOpen); // callback for the port opening
+  serial.on('data', serialEvent); // callback for when new data arrives
+  serial.on('error', serialError); // callback for errors
+  serial.on('close', portClose); // callback for the port closing
+
+  //serial.list(); // list the serial ports
+  serial.open(portName); // open a serial port
+ 
 }
 
 function draw() {
-  //head
-  ellipse(250, 150, 75, 75);
-  //body
-  rect(237, 187, 25, 100);
-  //arms
-  translate(width/2, height/2);
-  rotate(PI/3.0);
-  rect(-50, -10, 15, 50);
+  background(255);
+  stroke(0);
+  textSize(36);
+  text("Values coming over the Serial port: " + dataaa, 20, 50);
+}
+
+
+function serialEvent() {
+  dataa = serial.readStringUntil("\r\n"); //read bytes
   
-  rotate(PI/3.1);
-  rect(-48, -43, 15, 50);
-  //legs
-  rotate(PI/2.2);
-  rect(-15, -112, 15, 75);
-  
-  rotate(PI/-5);
-  rect(-5, -113, 15, 75);
+  if(dataa == "hello") {
+    serial.write('x');
+  }
+  if(dataa !== "hello") {
+    dataa = trim(dataa);
+    dataa = Number(dataa);
+    console.log("Recieved data: " + dataa);
+  }
+}
+
+function mousePressed() {
+  serial.write(1);
+  console.log("1")
+}
+
+function serialError(err) {
+  console.log('Something went wrong with the serial port. ' + err);
+}
+
+function portClose() {
+  console.log('The serial port closed.');
+}
+
+function printList(portList) {
+  for (var i = 0; i < portList.length; i++) {
+    console.log(i + " " + portList[i]);
+  }
+}
+
+
+function serverConnected() {
+  console.log('connected to server.');
+}
+
+function portOpen() {
+  console.log('the serial port opened.')
 }
