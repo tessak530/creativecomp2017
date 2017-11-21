@@ -1,25 +1,36 @@
-var logo;
-var structure;
+//with the help of p5 online library
+
+var song, analyzer, fft;
+
+function preload() {
+  song = loadSound('MeurteScore_1.mp3');
+}
 
 function setup() {
-  createCanvas(414, 628);
-  logo = loadImage("ASLearn_logo.png");
-  background(163, 205, 224);
-  structure = new basicStructure();
+  analyzer = new p5.Amplitude();
+  analyzer.setInput(song);
+  
+  fft = new p5.FFT();
+  
+  song.loop();
+  
+  createCanvas(500, 500);
 }
 
 function draw() {
-  structure.display();
+  background(255);
+  var rms = analyzer.getLevel();
+  var spectrum = fft.analyze();
+  noStroke();
   
-}
-
-function mousePressed() {
-  if(structure.clicked() === true) {
-    if(30 < mouseX <115 && 135 < mouseY < 155) {
-      removeElements();
-    }
-  }
-  else {
-    structure.clicked();
+  for(var i = 0; i < spectrum.length; i++) {
+    var x = map(i, 0, spectrum.length, 0, width);
+    var h = -height + map(spectrum[i], 0, 255, height, 0);
+    
+    rect(x, height, 1, h);
+    fill(i / 2, width / spectrum.length, 0);
+    
+    rotate(PI/x);
+    rect(400, 100, 50, 50);
   }
 }
