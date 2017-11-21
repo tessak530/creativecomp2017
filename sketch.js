@@ -1,34 +1,25 @@
-//with help from NYU ITP website and David Rios
-
-var vid;
-var canvas;
+var logo;
+var structure;
 
 function setup() {
-  createCanvas(600, 338);
-  vid = createVideo("IMG_0251.MOV");
-  vid.size(600, 338);
-  vid.hide();
-  noStroke();
-  //canvas = createImage(600, 338);
-  //canvas.loadPixels();
-  vid.loop();
-  fill(25);
+  createCanvas(414, 628);
+  logo = loadImage("ASLearn_logo.png");
+  background(163, 205, 224);
+  structure = new basicStructure();
 }
 
 function draw() {
-  background(255);
-  vid.loadPixels();
+  structure.display();
   
-  var stepSize = round(constrain(mouseX / 8, 1, 5));
-  
-  for(var y = 0; y < height; y+=stepSize) {
-    for (var x = 0; x < width; x+=stepSize) {
-      var i = y * width + x;
-      
-      var darkness = (255 - vid.pixels[i * 4]) / 255;
-      var radius = stepSize * darkness;
-      ellipse(x, y, radius, radius);
+}
+
+function mousePressed() {
+  if(structure.clicked() === true) {
+    if(30 < mouseX <115 && 135 < mouseY < 155) {
+      removeElements();
     }
   }
-
+  else {
+    structure.clicked();
+  }
 }
