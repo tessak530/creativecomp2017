@@ -1,0 +1,62 @@
+html {
+  height: 500px;
+  width: 500px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 500px;
+  width: 500px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.container {
+  height: 500px;
+  width: 500px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+body {
+  font-family: avenir next;
+  background-color: rgb(163, 205, 224);
+  width: 414px;
+  height: 628px;
+}
+
+.logo {
+  display: block;
+  margin: 0px auto;
+}
+
+button {
+  background-color: #E6E6E6;
+  border: none;
+  text-align: center;
+  font-family: avenir next;
+  font-size: 18px;
+  padding: 10px 45px;
+  border-radius: 8px;
+  position: relative;
+  top: 50px;
+}
+
+button:hover {
+  background-color: white;
+}
+
+#l1,
+#l3,
+#l5 {
+  left: 25px;
+}
+
+#l2,
+#l4,
+#l6 {
+  left: 45px;
+}

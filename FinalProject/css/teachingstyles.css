@@ -1,0 +1,199 @@
+html {
+  height: 628px;
+  width: 414px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 628px;
+  width: 414px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.container {
+  height: 628px;
+  width: 414px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+body {
+  font-family: avenir next;
+  background-color: rgb(163, 205, 224);
+  width: 414px;
+  height: 628px;
+}
+.logo {
+  display: block;
+  margin: 0px auto;
+}
+p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 25px;
+}
+h1 {
+  text-align: center;
+  margin: 0px;
+  position: relative;
+  top: 5px;
+  bottom: 5px;
+}
+.alphabet {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  left: 50px;
+  bottom: 0px;
+  top: 5px;
+}
+button {
+  background-color: #E6E6E6;
+  border: none;
+  text-align: center;
+  font-family:avenir next;
+  font-size: 22px;
+  padding: 20px 45px;
+  border-radius: 8px;
+  position: relative;
+  top: 3px;
+  left: 125px;
+}
+.letter {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 55px;
+}
+#a {
+  height: 125px;
+  top: 19px;
+  left: 10px;
+}
+#b {
+  left: 0px;
+}
+#c {
+  width: 90px;
+  top: 7px;
+  left: 8px;
+}
+#d {
+  width: 95px;
+  height: 95px;
+  left: 2px;
+  top: 2px;
+}
+#e {
+  width: 90px;
+  height: 90px;
+}
+#f {
+  height: 90px;
+  width: 85px;
+  bottom: 6px;
+  left: 70px;
+}
+#g {
+  height: 80px;
+  top: 5px;
+  left: 75px;
+}
+#h {
+  height: 80px;
+  left: 45px;
+  top: 2px;
+}
+#i {
+  height: 90px;
+  width: 90px;
+}
+#j {
+  height: 80px;
+  bottom: 4px;
+  left: 65px;
+}
+#k {
+  width: 85px;
+  height: 85px;
+  bottom: 10px;
+}
+#l {
+  width: 83px;
+  height: 83px;
+  bottom: 3px;
+  left: 72px;
+}
+#m {
+  width: 78px;
+  height: 85px;
+  left: 90px;
+}
+#n {
+  width: 75px;
+  height: 90px;
+  left: 10px;
+  top: 2px;
+}
+#o {
+  height: 98px;
+  width: 95px;
+  left: 20px;
+}
+#p {
+  height: 75px;
+  bottom: 5px;
+  left: 15px;
+}
+#q {
+  left: 30px;
+  width: 95px;
+  top: 6px;
+}
+#s {
+  top: 5px;
+  height: 93px;
+  width: 93px;
+  left: 50px;
+}
+#t {
+  height: 98px;
+  width: 95px;
+  top: 11px;
+}
+#u {
+  height: 97px;
+  bottom: 1px;
+  left: 62px;
+}
+#v, #w {
+  height: 97px;
+  width: 98px;
+}
+#x {
+  width: 93px;
+  height: 95px;
+  left: 60px;
+}
+#y {
+  height: 80px;
+  bottom: 3px;
+}
+#z {
+  left: 48px;
+  height: 105px;
+  top: 2px;
+}
+.numbers {
+  position: relative;
+  top: -25px;
+  left: 10px;
+}
+#answer {
+  position: relative;
+  left: 100px;
+}

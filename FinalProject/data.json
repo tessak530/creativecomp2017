@@ -1,0 +1,12 @@
+{ "quizlist": [
+  {
+    "question":"What does this spell out?",
+    "response": "spicy"
+  },
+  
+  {
+    "question":"What letter is this?",
+    "response":"n"
+  }
+  ]
+}
