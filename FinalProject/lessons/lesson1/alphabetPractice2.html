@@ -1,32 +1,20 @@
+<!-- FILL-IN-THE-BLANK QUIZ HELP BY HTTPS://CODEPEN.IO/MELOFFBIRD/PEN/RrMeeZ -->
+
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="UTF-8">
   <title>FinalProject</title>
-  <script src="libraries/p5.js" type="text/javascript"></script>
-  <script language="javascript" type="text/javascript" src="path/to/p5.dom.js"></script>
-  <script src="libraries/p5.dom.js" type="text/javascript"></script>
-  <script src="libraries/p5.sound.js" type="text/javascript"></script>
 
-  <meta name=viewport content="width=device-width, initial scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <scirpt src="jquery.js"></scirpt>
-  <script src="controller.js"></script>
-  <link href="../../css/alphaPractice.css" type="text/css" rel="stylesheet">
+  <meta name="viewport" content="width='device-width', initial-scale='1.0', maximum-scale='1.0', user-scalable='no'">
 
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-    }
-    
-    canvas {
-      vertical-align: top;
-    }
-  </style>
+
+  <link href="../../css/alphaPractice.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
+
   <img src="../../pictures/ASLearn_logo.png" class="logo" alt="logo">
   <h1>Practice Time!</h1>
   <img src="../../pictures/letters/s-noLetter.png" class="letter" id="s">
@@ -36,7 +24,13 @@
   <img src="../../pictures/letters/c-noLetter.png" class="letter" id="c">
   <img src="../../pictures/letters/y-noLetter.png" class="letter" id="y">
 
-  <div id="gameArea" tabindex="1"></div>
+  <p>What does this spell?</p>
+
+  <br/>
+  <button class="wrongButton" onclick="alert('Wrong answer! Try again!')" id="noicy">NOICY</button>
+  <button class="rightButton" onclick="location.href='alphabetPractice3.html'" id="spicy">SPICY</button>
+  <button class="wrongButton" onclick="alert('Wrong answer! Try again!')" id="thiccy">THICCY</button>
+  <button class="wrongButton" onclick="alert('Wrong answer! Try again!')" id="oric">ORIC COWABUNGA!</button>
 </body>
 
 </html>
