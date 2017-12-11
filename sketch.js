@@ -1,36 +1,32 @@
-//with the help of p5 online library
-
-var song, analyzer, fft;
-
-function preload() {
-  song = loadSound('MeurteScore_1.mp3');
-}
+var img;
+var thumbRed = [];
+var indexGreen = [];
+var middleBlue = [];
+var ringBlack = [];
+var pinkieOrange = [];
 
 function setup() {
-  analyzer = new p5.Amplitude();
-  analyzer.setInput(song);
-  
-  fft = new p5.FFT();
-  
-  song.loop();
-  
-  createCanvas(500, 500);
+  createCanvas(640, 480);
+  video = createCapture(VIDEO);
+  video.size(320, 240);
+  //pixelDensity(1);
+  img = createImage(640, 480);
+  img.loadPixels();
 }
 
 function draw() {
-  background(255);
-  var rms = analyzer.getLevel();
-  var spectrum = fft.analyze();
-  noStroke();
-  
-  for(var i = 0; i < spectrum.length; i++) {
-    var x = map(i, 0, spectrum.length, 0, width);
-    var h = -height + map(spectrum[i], 0, 255, height, 0);
+  video.loadPixels();
+  for (var i = 0; i < 4 * (video.width * video.height); i += 4) {
+    var r = video.pixels[i];
+    var g = video.pixels[i + 1];
+    var b = video.pixels[i + 2];
+    var a = video.pixels[i + 3];
     
-    rect(x, height, 1, h);
-    fill(i / 2, width / spectrum.length, 0);
-    
-    rotate(PI/x);
-    rect(400, 100, 50, 50);
+    img.pixels[i] = r;
+    img.pixels[i + 1] = g;
+    img.pixels[i + 2] = b;
+    img.pixels[i + 3] = a;
   }
+  img.updatePixels();
+  image(img, 0, 0);
 }
