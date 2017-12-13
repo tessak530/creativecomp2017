@@ -150,3 +150,15 @@ button {
   top: 15px;
   left: 60px;
 }
+
+#finish {
+  position: relative;
+  top: 320px;
+  left: 135px;
+}
+
+#menu {
+  position: relative;
+  top: 200px;
+  left: 135px;
+}
